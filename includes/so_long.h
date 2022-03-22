@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:05:04 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/03/22 10:16:39 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/03/22 17:43:24 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ typedef struct	s_map
 
 unsigned int	ft_check_extension(char *file_name, char *ext);
 unsigned int	ft_check_size_map(t_map *map, int fd);
+void			ft_parse_row(char **row);
+char			*ft_ignore_nl(int fd);
 
 #endif
