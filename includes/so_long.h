@@ -34,12 +34,30 @@ typedef struct s_map
 
 // MACRO
 # define EXT_BER ".ber"
+# define MIN_R 3
+# define MIN_C 3
+# define MIN 5
 
-// ERROR CODES
+// Map
+# define WALL '1'
+# define EMPTY_SPACE '0'
+# define COLLECTIBLE 'C'
+# define EXIT_MAP 'E'
+# define START_POSITION 'P'
 
+// Error codes
+# define ERR_EXT 1
+# define ERR_COLS 2
+# define ERR_SIZE 3
+# define ERR_PERIMETER 4
+
+// FUNCTIONS
+// Checks
 unsigned int	ft_check_extension(char *file_name, char *ext);
-unsigned int	ft_check_size_map(t_map *map, int fd);
-void			ft_parse_row(char **row);
+unsigned int	ft_check_cols_map(t_map *map);
+unsigned int	ft_check_size_map(t_map *map);
+unsigned int	ft_check_perimeter_map(t_map *map);
+unsigned int	ft_check_element_map(t_map *map, char element, int limit);
 
 // Parse
 void			ft_remove_nl(char **row);
