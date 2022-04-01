@@ -6,11 +6,11 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:55:41 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/03/24 13:18:10 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/01 09:35:50 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "./includes/so_long.h"
 
 void	ft_remove_nl(char **row)
 {

@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:05:04 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/03/24 21:16:00 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/01 11:51:32 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <math.h>
+# include <mlx.h>
 # include "../ft_printf/includes/ft_printf.h"
 
 // TYPES
@@ -31,6 +32,14 @@ typedef struct s_map
 	unsigned int	rows;
 	unsigned int	cols;
 }	t_map;
+
+typedef struct s_data {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_data;
 
 // MACRO
 # define EXT_BER ".ber"

@@ -6,7 +6,7 @@
 #    By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/06 09:51:37 by ajordan-          #+#    #+#              #
-#    Updated: 2022/02/25 11:57:00 by gsemerar         ###   ########.fr        #
+#    Updated: 2022/04/01 11:16:17 by gsemerar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,12 @@ $(NAME):	$(OBJ)
 bonus:		all
 
 clean:
-			$(RM) $(OBJ)
 			make clean -C $(LIBFT)
+			$(RM) $(OBJ)
 
 fclean:		clean
+			make fclean -C $(LIBFT)
 			$(RM) $(NAME)
-			$(RM) $(LIBFT)/libft.a
 
 re:			fclean all
 

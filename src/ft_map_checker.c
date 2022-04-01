@@ -6,11 +6,11 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:19:54 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/03/24 21:13:43 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/01 09:35:50 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "./includes/so_long.h"
 
 unsigned int	ft_check_cols_map(t_map *map)
 {
