@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:05:04 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/01 11:51:32 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/05 12:56:16 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,37 @@ typedef struct s_map
 	unsigned int	cols;
 }	t_map;
 
+typedef struct s_vars {
+	void	*mlx;
+	void	*win;
+}	t_vars;
+
 typedef struct s_data {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	char	*file;
+	int		img_width;
+	int		img_height;
+	int		img_pos_x;
+	int		img_pos_y;
 }	t_data;
+
+typedef struct s_characters {
+	t_data	player;
+	t_data	empty_space;
+	t_data	wall;
+	t_data	collectible;
+	t_data	exit_map;
+}	t_characters;
+
+typedef struct s_game {
+	t_vars			*vars;
+	t_characters	*c;
+	t_map			*map;
+}	t_game;
 
 // MACRO
 # define EXT_BER ".ber"
@@ -47,12 +71,26 @@ typedef struct s_data {
 # define MIN_C 3
 # define MIN 5
 
+// Keys
+# define KEY_ESC 65307
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+
 // Map
+# define PLAYER 'P'
 # define WALL '1'
 # define EMPTY_SPACE '0'
 # define COLLECTIBLE 'C'
 # define EXIT_MAP 'E'
-# define START_POSITION 'P'
+
+// Images
+# define IMG_PLAYER "./img/player.xpm"
+# define IMG_WALL "./img/wall.xpm"
+# define IMG_EMPTY_SPACE "./img/empty_space.xpm"
+# define IMG_COLLECTIBLE "./img/collectible.xpm"
+# define IMG_EXIT_MAP "./img/exit_map.xpm"
 
 // Error codes
 # define ERR_EXT 1
@@ -66,7 +104,7 @@ unsigned int	ft_check_extension(char *file_name, char *ext);
 unsigned int	ft_check_cols_map(t_map *map);
 unsigned int	ft_check_size_map(t_map *map);
 unsigned int	ft_check_perimeter_map(t_map *map);
-unsigned int	ft_check_element_map(t_map *map, char element, int limit);
+unsigned int	ft_check_element_map(t_map *map, char element, int min, int max);
 
 // Parse
 void			ft_remove_nl(char **row);
@@ -78,5 +116,11 @@ unsigned int	ft_create_map(t_map *map);
 unsigned int	ft_set_rc_map(t_map *map);
 unsigned int	ft_open_map(t_map *map);
 unsigned int	ft_close_map(t_map *map);
+void			ft_render_map(t_map *map, t_vars *vars, t_characters *c);
+
+// MLX Utils
+void			ft_mlx_pixel_put(t_data *data, int x, int y, int color);
+t_data			ft_mlx_load_img(void *mlx, char *file);
+t_characters	ft_mlx_load_images(void *mlx);
 
 #endif
