@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:05:04 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/05 12:56:16 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/14 23:03:12 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,11 @@ typedef struct s_game {
 # define MIN 5
 
 // Keys
-# define KEY_ESC 65307
-# define KEY_W 119
-# define KEY_A 97
-# define KEY_S 115
-# define KEY_D 100
+# define KEY_ESC 53
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
 
 // Map
 # define PLAYER 'P'
