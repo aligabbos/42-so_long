@@ -24,3 +24,24 @@ char	ft_moving_to(int keycode, t_map *map, t_data *player)
 		return (map->map[player->img_pos_x][player->img_pos_y + 1]);
 	return (map->map[player->img_pos_x][player->img_pos_y]);
 }
+
+void	ft_find_pos_player(t_map *map, t_data *player)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = -1;
+	while (++i < map->rows)
+	{
+		j = -1;
+		while (++j < map->cols)
+		{
+			if (map->map[i][j] == PLAYER)
+			{
+				player->img_pos_x = i;
+				player->img_pos_y = j;
+				return ;
+			}
+		}
+	}
+}
