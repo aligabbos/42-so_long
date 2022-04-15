@@ -138,4 +138,7 @@ t_data			ft_mlx_load_img(void *mlx, char *file);
 t_characters	ft_mlx_load_images(void *mlx);
 void			ft_mlx_close_images(void *mlx, t_characters *c);
 
+// Error handler
+void			ft_perror_exit(char *err_msg, int err_code);
+
 #endif
