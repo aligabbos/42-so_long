@@ -66,6 +66,7 @@ typedef struct s_game {
 }	t_game;
 
 // MACRO
+# define GAME_TITLE "so_long"
 # define EXT_BER ".ber"
 # define MIN_R 3
 # define MIN_C 3
