@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:05:04 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/14 23:03:12 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:11:10 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,6 @@ unsigned int	ft_close_map(t_map *map);
 void			ft_render_map(t_map *map, t_vars *vars, t_characters *c);
 
 // MLX Utils
-void			ft_mlx_pixel_put(t_data *data, int x, int y, int color);
 t_data			ft_mlx_load_img(void *mlx, char *file);
 t_characters	ft_mlx_load_images(void *mlx);
 
