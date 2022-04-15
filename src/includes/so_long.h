@@ -133,8 +133,9 @@ unsigned int	ft_open_map(t_map *map);
 unsigned int	ft_close_map(t_map *map);
 void			ft_render_map(t_map *map, t_vars *vars, t_characters *c);
 
-// MLX Utils
+// MLX utils
 t_data			ft_mlx_load_img(void *mlx, char *file);
 t_characters	ft_mlx_load_images(void *mlx);
+void			ft_mlx_close_images(void *mlx, t_characters *c);
 
 #endif
