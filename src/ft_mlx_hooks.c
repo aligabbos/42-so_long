@@ -6,32 +6,39 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:54:35 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/05 13:12:53 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/13 19:02:51 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/so_long.h"
 
-int	ft_mlx_key_hook(int keycode, t_game *game)
+static int	move(int keycode, t_game *g);
+
+int	ft_mlx_key_hook(int keycode, t_game *g)
 {
 	if (keycode != KEY_ESC)
-	{;}
-		// move(keycode, game);
-	else
-		mlx_loop_end(game->vars->mlx);
+		move(keycode, g);
 	return (0);
 }
 
-// int	move(int keycode, t_game *t)
-// {
-// 	if (keycode == KEY_W ||
-// 		keycode == KEY_A ||
-// 		keycode == KEY_S ||
-// 		keycode == KEY_D)
-// 		{;}
-	// t->x += 100;
-	// t->img->addr = mlx_get_data_addr(t->img->img, &t->img->bits_per_pixel, &t->img->line_length,
-	// 							&t->img->endian);
-	// mlx_put_image_to_window(t->vars->mlx, t->vars->win, t->img->img, t->x, t->y);
-// 	return (0);
-// }
+static int	move(int keycode, t_game *g)
+{
+	char	mt;
+
+	ft_find_pos_player(g->map, &g->c->player);
+	mt = ft_moving_to(keycode, g->map, &g->c->player);
+	if (mt == EMPTY_SPACE || mt == COLLECTIBLE
+		|| (mt == EXIT_MAP && !ft_count_collectible(g->map)))
+	{
+		g->moves += 1;
+		ft_printf("%u\n", g->moves);
+	}
+	if (mt == EMPTY_SPACE || mt == COLLECTIBLE)
+	{
+		ft_update_map(keycode, g->map, &g->c->player);
+		ft_render_map(g->map, g->vars, g->c);
+	}
+	else if (mt == EXIT_MAP && !ft_count_collectible(g->map))
+		exit(0);
+	return (0);
+}
