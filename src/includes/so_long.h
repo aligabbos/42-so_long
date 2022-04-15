@@ -140,6 +140,7 @@ void			ft_mlx_close_images(void *mlx, t_characters *c);
 
 // MLX hooks
 int				ft_mlx_key_hook(int keycode, t_game *g);
+int				ft_mlx_close(t_game *g);
 
 // Error handler
 void			ft_perror_exit(char *err_msg, int err_code);

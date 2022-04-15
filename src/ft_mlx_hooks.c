@@ -21,6 +21,15 @@ int	ft_mlx_key_hook(int keycode, t_game *g)
 	return (0);
 }
 
+int	ft_mlx_close(t_game *g)
+{
+	ft_free_map(g->map);
+	ft_mlx_close_images(g->vars->mlx, g->c);
+	mlx_destroy_window(g->vars->mlx, g->vars->win);
+	exit(EXIT_SUCCESS);
+	return (0);
+}
+
 static int	move(int keycode, t_game *g)
 {
 	char	mt;
