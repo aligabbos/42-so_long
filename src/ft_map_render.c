@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 18:48:57 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/05 13:10:38 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:22:24 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@ void	ft_render_map(t_map *map, t_vars *vars, t_characters *c)
 	ft_render_character_map(map, EXIT_MAP,
 		vars, &c->exit_map);
 }
-
-// void	ft_render_cell_map(t_map *map, char e, int x, int y)
-// {
-// 	map->map[x][y] = e;
-// }
 
 static void	ft_render_character_map(t_map *map, char type,
 			t_vars *vars, t_data *img)
