@@ -94,10 +94,22 @@ typedef struct s_game {
 # define IMG_EXIT_MAP "./img/exit_map.xpm"
 
 // Error codes
-# define ERR_EXT 1
-# define ERR_COLS 2
-# define ERR_SIZE 3
-# define ERR_PERIMETER 4
+# define ERR_FILE 1
+# define ERR_EXT 2
+# define ERR_COLS 3
+# define ERR_SIZE 4
+# define ERR_PERIMETER 5
+# define ERR_ELEMENT_TYPE 6
+# define ERR_ELEMENT_NUM 7
+
+// Error msg
+# define ERR_MSG_FILE "Map error: unable to open the map."
+# define ERR_MSG_EXT "Map error: wrong map extension."
+# define ERR_MSG_COLS "Map error: map must be rectangular."
+# define ERR_MSG_SIZE "Map error: map too small."
+# define ERR_MSG_PERIMETER "Map error: map must be surrounded by walls."
+# define ERR_MSG_ELEMENT_TYPE "Map error: unrecognized element in map."
+# define ERR_MSG_ELEMENT_NUM "Map error: wrong number element 'E','C' or 'P'."
 
 // FUNCTIONS
 // Checks
