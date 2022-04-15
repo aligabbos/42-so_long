@@ -80,3 +80,25 @@ unsigned int	ft_check_n_of_element_map(t_map *map, char e, int min, int max)
 		return (l >= min);
 	return (l >= min && l <= max);
 }
+
+unsigned int	ft_check_element_type_map(t_map *map)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = -1;
+	while (++i < map->rows)
+	{
+		j = -1;
+		while (++j < map->cols)
+		{
+			if (map->map[i][j] != WALL &&
+				map->map[i][j] != EMPTY_SPACE &&
+				map->map[i][j] != COLLECTIBLE &&
+				map->map[i][j] != EXIT_MAP &&
+				map->map[i][j] != PLAYER)
+				return (0);
+		}
+	}
+	return (1);
+}

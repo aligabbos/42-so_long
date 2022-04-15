@@ -119,6 +119,7 @@ unsigned int	ft_check_cols_map(t_map *map);
 unsigned int	ft_check_size_map(t_map *map);
 unsigned int	ft_check_perimeter_map(t_map *map);
 unsigned int	ft_check_n_of_element_map(t_map *map, char e, int min, int max);
+unsigned int	ft_check_element_type_map(t_map *map);
 
 // Parse
 void			ft_remove_nl(char **row);
