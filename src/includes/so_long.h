@@ -133,6 +133,7 @@ unsigned int	ft_open_map(t_map *map);
 unsigned int	ft_close_map(t_map *map);
 void			ft_render_map(t_map *map, t_vars *vars, t_characters *c);
 void			ft_set_map(t_map **map, char *map_file);
+char			ft_moving_to(int keycode, t_map *map, t_data *player);
 
 // MLX utils
 t_data			ft_mlx_load_img(void *mlx, char *file);
