@@ -58,3 +58,23 @@ void	ft_update_map(int keycode, t_map *map, t_data *player)
 	else if (keycode == KEY_D)
 		map->map[player->img_pos_x][player->img_pos_y + 1] = PLAYER;
 }
+
+unsigned int	ft_count_collectible(t_map *map)
+{
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	collectible;
+
+	i = -1;
+	collectible = 0;
+	while (++i < map->rows)
+	{
+		j = -1;
+		while (++j < map->cols)
+		{
+			if (map->map[i][j] == COLLECTIBLE)
+				collectible += 1;
+		}
+	}
+	return (collectible);
+}
