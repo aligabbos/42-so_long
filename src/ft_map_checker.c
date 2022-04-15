@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:19:54 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/05 00:15:31 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/14 17:13:03 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ unsigned int	ft_check_perimeter_map(t_map *map)
 	return (1);
 }
 
-unsigned int	ft_check_element_map(t_map *map, char element, int min, int max)
+unsigned int	ft_check_n_of_element_map(t_map *map, char e, int min, int max)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -72,7 +72,7 @@ unsigned int	ft_check_element_map(t_map *map, char element, int min, int max)
 		j = -1;
 		while (++j < map->cols)
 		{
-			if (map->map[i][j] == element)
+			if (map->map[i][j] == e)
 				l++;
 		}
 	}
