@@ -45,3 +45,16 @@ void	ft_find_pos_player(t_map *map, t_data *player)
 		}
 	}
 }
+
+void	ft_update_map(int keycode, t_map *map, t_data *player)
+{
+	map->map[player->img_pos_x][player->img_pos_y] = EMPTY_SPACE;
+	if (keycode == KEY_W)
+		map->map[player->img_pos_x - 1][player->img_pos_y] = PLAYER;
+	else if (keycode == KEY_S)
+		map->map[player->img_pos_x + 1][player->img_pos_y] = PLAYER;
+	else if (keycode == KEY_A)
+		map->map[player->img_pos_x][player->img_pos_y - 1] = PLAYER;
+	else if (keycode == KEY_D)
+		map->map[player->img_pos_x][player->img_pos_y + 1] = PLAYER;
+}
