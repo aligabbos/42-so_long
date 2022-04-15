@@ -32,8 +32,8 @@ void	ft_render_map(t_map *map, t_vars *vars, t_characters *c)
 static void	ft_render_character_map(t_map *map, char type,
 			t_vars *vars, t_data *img)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = -1;
 	while (++i < map->rows)
@@ -41,7 +41,7 @@ static void	ft_render_character_map(t_map *map, char type,
 		j = -1;
 		while (++j < map->cols)
 		{
-			if (map->map[i][j] == type)
+			if (map->map[i][j] == type || EMPTY_SPACE == type)
 				mlx_put_image_to_window(vars->mlx,
 					vars->win,
 					img->img,
