@@ -18,6 +18,8 @@ int	ft_mlx_key_hook(int keycode, t_game *g)
 {
 	if (keycode != KEY_ESC)
 		move(keycode, g);
+	else if (keycode == KEY_ESC)
+		ft_mlx_close(g);
 	return (0);
 }
 
