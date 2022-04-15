@@ -63,6 +63,7 @@ typedef struct s_game {
 	t_vars			*vars;
 	t_characters	*c;
 	t_map			*map;
+	unsigned int	moves;
 }	t_game;
 
 // MACRO
