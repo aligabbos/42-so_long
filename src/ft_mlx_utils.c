@@ -19,8 +19,8 @@ t_data	ft_mlx_load_img(void *mlx, char *file)
 	img.file = file;
 	img.img = mlx_xpm_file_to_image(mlx,
 			img.file,
-			&img.img_width,
-			&img.img_height);
+			(int *) &img.img_width,
+			(int *) &img.img_height);
 	img.addr = mlx_get_data_addr(img.img,
 			&img.bits_per_pixel,
 			&img.line_length,
