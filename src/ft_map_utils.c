@@ -78,3 +78,13 @@ unsigned int	ft_count_collectible(t_map *map)
 	}
 	return (collectible);
 }
+
+void	ft_free_map(t_map *map)
+{
+	unsigned int	i;
+
+	i = -1;
+	while (++i < map->rows)
+		free(map->map[i]);
+	free(map->map);
+}
