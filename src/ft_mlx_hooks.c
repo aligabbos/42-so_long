@@ -52,6 +52,9 @@ static int	move(int keycode, t_game *g)
 		ft_render_map(g->map, g->vars, g->c);
 	}
 	else if (mt == EXIT_MAP && !ft_count_collectible(g->map))
-		exit(0);
+	{
+		ft_mlx_close(g);
+		exit(EXIT_SUCCESS);
+	}
 	return (0);
 }
