@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 08:05:04 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/15 19:19:14 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/16 16:53:22 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,5 +150,6 @@ int				ft_mlx_close(t_game *g);
 
 // Error handler
 void			ft_perror_exit(char *err_msg, int err_code);
+int				ft_set_error(t_map *map);
 
 #endif
