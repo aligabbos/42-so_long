@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:54:35 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/13 19:02:51 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/16 11:37:59 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_mlx_close(t_game *g)
 	ft_free_map(g->map);
 	ft_mlx_close_images(g->vars->mlx, g->c);
 	mlx_destroy_window(g->vars->mlx, g->vars->win);
+	mlx_destroy_display(g->vars->mlx);
+	free(g->vars->mlx);
 	exit(EXIT_SUCCESS);
 	return (0);
 }
