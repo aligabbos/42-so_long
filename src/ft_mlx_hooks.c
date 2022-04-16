@@ -6,7 +6,7 @@
 /*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:54:35 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/04/13 19:02:51 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/04/16 17:11:22 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ static int	move(int keycode, t_game *g)
 		ft_render_map(g->map, g->vars, g->c);
 	}
 	else if (mt == EXIT_MAP && !ft_count_collectible(g->map))
-		exit(0);
+		exit(EXIT_SUCCESS);
 	return (0);
 }
